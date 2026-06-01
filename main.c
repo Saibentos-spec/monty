@@ -1,5 +1,13 @@
 #include "monty.h"
 
+/**
+ * main - Monty interpreter entry point
+ * @ac: argument count
+ * @av: argument vector
+ *
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
+ */
+
 int main(int ac, char **av)
 {
     FILE *file;
