@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * is_number - checks if string is valid integer
+ * @s: string to check
+ *
+ * Return: 1 if valid, 0 otherwise
+ */
+
 int is_number(char *s)
 {
     if (!s) return 0;
