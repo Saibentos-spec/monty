@@ -20,6 +20,11 @@ int main(int ac, char **av)
         exit(EXIT_FAILURE);
     }
 
+      if (!file)
+                 {
+	  return;
+               }
+
     while (fgets(line, sizeof(line), file))
     {
         char *opcode = strtok(line, " \n\t");
