@@ -27,5 +27,6 @@ void mul(stack_t **stack, unsigned int line_number);
 /* Helpers */
 int is_number(char *s);
 void free_stack(stack_t *stack);
-
+void get_op_func(char *opcode, stack_t **stack,
+                 unsigned int line_number, char *arg);
 #endif
