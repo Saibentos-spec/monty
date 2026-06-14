@@ -1,27 +1,16 @@
 if (mode == STACK_MODE)
 {
-	new->next = *stack;
-	new->prev = NULL;
-
-	if (*stack)
-		(*stack)->prev = new;
-
-	*stack = new;
+	/* existing push */
 }
 else
 {
-	stack_t *tmp;
-
-	new->next = NULL;
+	stack_t *tmp = *stack;
 
 	if (*stack == NULL)
 	{
-		new->prev = NULL;
 		*stack = new;
 		return;
 	}
-
-	tmp = *stack;
 
 	while (tmp->next)
 		tmp = tmp->next;
