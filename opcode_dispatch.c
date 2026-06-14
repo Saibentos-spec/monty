@@ -29,6 +29,8 @@ void get_op_func(char *opcode, stack_t **stack,
 	pchar(stack, line_number);
 	else if (strcmp(opcode, "pstr") == 0)
 	pstr(stack, line_number);
+	else if (strcmp(opcode, "rotl") == 0)
+	rotl(stack, line_number);
     else
     {
         fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
