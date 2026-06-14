@@ -7,6 +7,14 @@
  *
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
+char *ptr = line;
+
+while (*ptr == ' ' || *ptr == '\t')
+	ptr++;
+
+if (*ptr == '#')
+	continue;
+
 int main(int ac, char **av)
 {
 	FILE *file;
