@@ -1,3 +1,11 @@
+new->next = *stack;
+new->prev = NULL;
+
+if (*stack)
+	(*stack)->prev = new;
+
+*stack = new;
+
 if (mode == STACK_MODE)
 {
 	/* existing push */
