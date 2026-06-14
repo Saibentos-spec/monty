@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+extern int mode;
+
+#define STACK_MODE 0
+#define QUEUE_MODE 1
 
 typedef struct stack_s
 {
