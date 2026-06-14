@@ -1,28 +1,33 @@
-new->next = *stack;
-new->prev = NULL;
+#include "monty.h"
 
-if (*stack)
-	(*stack)->prev = new;
-
-*stack = new;
-
-if (mode == STACK_MODE)
+/**
+ * push - pushes element to stack
+ * @stack: stack pointer
+ * @line_number: line number
+ * @arg: integer argument
+ *
+ * Return: void
+ */
+void push(stack_t **stack, unsigned int line_number, char *arg)
 {
-	/* existing push */
-}
-else
-{
-	stack_t *tmp = *stack;
+	stack_t *new;
 
-	if (*stack == NULL)
+	if (!arg || !is_number(arg))
 	{
-		*stack = new;
-		return;
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 
-	while (tmp->next)
-		tmp = tmp->next;
+	new = malloc(sizeof(stack_t));
+	if (!new)
+		exit(EXIT_FAILURE);
 
-	tmp->next = new;
-	new->prev = tmp;
+	new->n = atoi(arg);
+	new->prev = NULL;
+	new->next = *stack;
+
+	if (*stack)
+		(*stack)->prev = new;
+
+	*stack = new;
 }
