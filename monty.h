@@ -5,10 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-extern int mode;
-
-#define STACK_MODE 0
-#define QUEUE_MODE 1
 
 typedef struct stack_s
 {
@@ -16,6 +12,11 @@ typedef struct stack_s
     struct stack_s *prev;
     struct stack_s *next;
 } stack_t;
+
+#define STACK_MODE 0
+#define QUEUE_MODE 1
+
+extern int mode;
 
 /* Core functions */
 void push(stack_t **stack, unsigned int line_number, char *arg);
